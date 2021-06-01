@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: MIT
-
 // COPIED FROM https://github.com/compound-finance/compound-protocol/blob/master/contracts/Governance/GovernorAlpha.sol
 // Copyright 2020 Compound Labs, Inc.
 // Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -10,11 +8,13 @@
 //
 // Ctrl+f for XXX to see all the modifications.
 
+// SPDX-License-Identifier: MIT
+
 // XXX: pragma solidity ^0.5.16;
 pragma solidity 0.6.12;
 
 // XXX: import "./SafeMath.sol";
-import "@openzeppelin/contracts/math/SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/math/SafeMath.sol";
 
 contract Timelock {
     using SafeMath for uint;
@@ -27,7 +27,7 @@ contract Timelock {
     event QueueTransaction(bytes32 indexed txHash, address indexed target, uint value, string signature, bytes data, uint eta);
 
     uint public constant GRACE_PERIOD = 14 days;
-    uint public constant MINIMUM_DELAY = 6 hours;
+    uint public constant MINIMUM_DELAY = 3 hours;
     uint public constant MAXIMUM_DELAY = 30 days;
 
     address public admin;
